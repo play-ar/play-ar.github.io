@@ -3,11 +3,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'ArWeb' });
+  res.render('index', { 
+    title: 'ArWeb',
+    scannerPath: '/scanner' 
+  });
 });
 
 router.get('/scanner', function(req, res, next) {
-  res.render('scanner', { layout: false });
+  res.render('scanner', { 
+    layout: false,
+  });
 });
 
 module.exports = router;

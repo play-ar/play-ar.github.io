@@ -1,7 +1,4 @@
-console.log('hi');
 $(function () {
-  console.log("ready!");
-
   var canvas = document.createElement('canvas');
   document.querySelector('#arcode-container').appendChild(canvas)
   canvas.width = 1024;
@@ -19,7 +16,7 @@ $(function () {
   function updateARCode() {
     console.log('updateARCode');
 
-    var textToQR = 'http://localhost:3001/scanner';
+    var textToQR = window.scannerPath;
     generateArCodeCanvas(canvas, textToQR, function onReady() {
       console.log('ar-code generated for', textToQR)
     })

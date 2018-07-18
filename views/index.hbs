@@ -1,4 +1,7 @@
 <script src='https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js'></script>
+<script type="text/javascript">
+  window.scannerPath = location.protocol + "//" + location.host + "{{scannerPath}}"
+</script>
 <script src="js/index.js"></script>
 
 <div style="height: 100vh" class="valign-wrapper">
@@ -6,7 +9,6 @@
     <div class="center-align">
       <h1>{{title}}</h1>
       <p>Scan QR Code below</p>
-
       <div id="arcode-container"></div>
     </div>
   </div>
