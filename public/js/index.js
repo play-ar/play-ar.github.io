@@ -12,7 +12,7 @@ $(function () {
     updateARCode()
     setTimeout(() => {
       document.querySelector('#arcode-container').classList.add("scale-in");  
-    }, 500);
+    }, 250);
     
   }
   hiroImage.src = 'images/hiro.png';
