@@ -10,6 +10,10 @@ $(function () {
   hiroImage.onload = function () {
     console.log('hiro image loaded')
     updateARCode()
+    setTimeout(() => {
+      document.querySelector('#arcode-container').classList.add("scale-in");  
+    }, 500);
+    
   }
   hiroImage.src = 'images/hiro.png';
 
