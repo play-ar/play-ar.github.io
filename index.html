@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+  <!-- materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+
+  <!-- jquery -->
+  <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+      crossorigin="anonymous"></script>
+
+  <!-- our css -->
+  <link rel="stylesheet" href="./public/css/main.css">
+
+  <!-- title -->
+  <title>Play AR</title>
+</head>
+<body>
+  <!-- qrcode -->
+  <script src='https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js'></script>
+
+  <!-- getting path for qr code -->
+  <script type="text/javascript">
+    window.scannerPath = location.protocol + "//" + location.host + "/scanner"
+    console.log('window.scannerPath', window.scannerPath)
+  </script>
+
+  <script src="./public/js/index.js"></script>
+  
+  <div style="height: 100vh" class="valign-wrapper">
+    <div class="container">
+      <div class="center-align">
+        <h1 class="title amber-text darken-4">
+          Play AR
+        </h1>
+
+        <p class="amber-text darken-1">Scan QR Code below</p>
+
+        <div 
+          id="arcode-container" 
+          class="scale-transition scale-out">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
