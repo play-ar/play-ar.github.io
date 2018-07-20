@@ -15,6 +15,18 @@
 
 <!-- our js -->
 <script src="./public/js/gesture.js"></script>
+<script>
+  // $(function () {
+  //   THREEx.ArToolkitProfile.prototype.custom= function () {
+  //     this.contextParameters.detectionMode = 'color'
+      
+  //     this.defaultMarkerParameters.type = 'pattern'
+  //     this.defaultMarkerParameters.patternUrl = THREEx.ArToolKitContext.hostURL+ 'pattern-marker.patt'
+  //     return this
+  //   }
+  // })
+  
+</script>
 
 <body style='margin : 0px; overflow: hidden;'>
   <a-scene embedded arjs='trackingMethod: best;'>
@@ -22,29 +34,25 @@
     <a-assets>
       <a-asset-item id="yellow_mms" src="./public/ar_assets/yellow_mms/scene.gltf"></a-asset-item>
     </a-assets>
-
-    <!-- <a-anchor hit-testing-enabled='true'> -->
-    <a-marker preset="hiro">
       
-      <!-- use your gltf model -->
+    <!-- use your gltf model -->
+    <a-entity
+      id="model_env_yellow_ms"
+      position='0 0.5 0.5' 
+      rotation="-90 0 0"
+    >
       <a-entity
-        id="model_env_yellow_ms"
-        position='0 0.5 0.5' 
-        rotation="-90 0 0"
-      >
-        <a-entity
-          id="model_yellow_ms"
-          position='0 0 0'
-          rotation="0 0 0"
-          gltf-model="#yellow_mms"
-          scale="0.1 0.1 0.1"
-        ></a-entity>
-      </a-entity>
+        id="model_yellow_ms"
+        position='0 0 0'
+        rotation="0 0 0"
+        gltf-model="#yellow_mms"
+        scale="0.1 0.1 0.1"
+      ></a-entity>
+    </a-entity>
       
+    <!-- <a-marker-camera preset='hiro'></a-marker-camera> -->
+    <a-marker-camera type='pattern' url='./public/ar_assets/pattern-marker.patt'></a-marker-camera>
 
-    </a-marker>
-
-    <a-entity camera></a-entity>
   </a-scene>
 
   <div
