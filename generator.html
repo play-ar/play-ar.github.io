@@ -25,10 +25,11 @@
 <script src="./public/js/threex.arpatternfile.js"></script>
 <script>
   var innerImageURL = null
+  var innerImageURL_w, innerImageURL_h
   var fullMarkerURL = null
 
-  innerImageURL = './public/images/inner-arjs.png'
-  updateFullMarkerImage()
+  innerImageURL = './public/images/inner-arjs.png';
+  updateFullMarkerImage(293, 293);
 
   document.querySelector('#buttonDownloadEncoded').addEventListener('click', function () {
     if (innerImageURL === null) {
@@ -62,7 +63,7 @@
     document.querySelector('#patternRatioText').innerHTML = e.target.value / 100;
 
     // update fullMarkerImage
-    updateFullMarkerImage();
+    updateFullMarkerImage(innerImageURL_w, innerImageURL_h);
   }
 
   document.querySelector('#patternRatioSlider').addEventListener('input', onPatternRatioSliderChange);
@@ -76,16 +77,27 @@
     var reader = new FileReader();
     reader.onload = function (event) {
       innerImageURL = event.target.result
-      updateFullMarkerImage()
+
+      // getting h and w
+      var i = new Image(); 
+      i.onload = function(){
+        alert( i.width+", "+i.height );
+
+        // update marker
+        innerImageURL_w = i.width
+        innerImageURL_h = i.height
+        updateFullMarkerImage(innerImageURL_w, innerImageURL_h)
+      };
+      i.src = innerImageURL;       
     };
     reader.readAsDataURL(file);
   })
 
-  function updateFullMarkerImage() {
+  function updateFullMarkerImage(width, height) {
     // get patternRatio
     var patternRatio = document.querySelector('#patternRatioSlider').value / 100
 
-    THREEx.ArPatternFile.buildFullMarker(innerImageURL, patternRatio, function onComplete(markerUrl) {
+    THREEx.ArPatternFile.buildFullMarker(width, height, innerImageURL, patternRatio, function onComplete(markerUrl) {
       fullMarkerURL = markerUrl
 
       var fullMarkerImage = document.createElement('img')
