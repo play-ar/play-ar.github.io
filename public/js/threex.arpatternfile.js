@@ -93,14 +93,14 @@ THREEx.ArPatternFile.buildFullMarker =  function(width, height, innerImageURL, p
 	var canvas = document.createElement('canvas');
 	var context = canvas.getContext('2d')
   canvas.width = width
-  canvas.height = height
+  canvas.height = width // better with square
 
 	context.fillStyle = 'white';
 	context.fillRect(0,0,canvas.width, canvas.height)
 
   // copy image on canvas
   // outer frame
-	context.fillStyle = 'white';
+	context.fillStyle = '#027656';
 	context.fillRect(
 		whiteMargin * canvas.width,
 		whiteMargin * canvas.height,
@@ -109,7 +109,7 @@ THREEx.ArPatternFile.buildFullMarker =  function(width, height, innerImageURL, p
 	);
 
 	// clear the area for innerImage (in case of transparent image)
-	context.fillStyle = 'white';
+	context.fillStyle = '#027656';
 	context.fillRect(
 		innerMargin * canvas.width,
 		innerMargin * canvas.height,
