@@ -98,8 +98,9 @@ THREEx.ArPatternFile.buildFullMarker =  function(width, height, innerImageURL, p
 	context.fillStyle = 'white';
 	context.fillRect(0,0,canvas.width, canvas.height)
 
-	// copy image on canvas
-	context.fillStyle = 'black';
+  // copy image on canvas
+  // outer frame
+	context.fillStyle = 'white';
 	context.fillRect(
 		whiteMargin * canvas.width,
 		whiteMargin * canvas.height,

@@ -9,7 +9,7 @@
   <button id="buttonDownloadEncoded">buttonDownloadEncoded</button>
   <button id="buttonDownloadFullImage">buttonDownloadFullImage</button>
 
-  <input type="range" min="1" max="90" value="50" id="patternRatioSlider">
+  <input type="range" min="1" max="99" value="50" id="patternRatioSlider">
   <label for="patternRatioSlider">patternRatio: <span id="patternRatioText"></span></label>
 
   <input type="file" name="fileinput" id="fileinput">
@@ -29,7 +29,9 @@
   var fullMarkerURL = null
 
   innerImageURL = './public/images/inner-arjs.png';
-  updateFullMarkerImage(293, 293);
+  innerImageURL_w = 293
+  innerImageURL_h = 293
+  updateFullMarkerImage(innerImageURL_w, innerImageURL_h);
 
   document.querySelector('#buttonDownloadEncoded').addEventListener('click', function () {
     if (innerImageURL === null) {
